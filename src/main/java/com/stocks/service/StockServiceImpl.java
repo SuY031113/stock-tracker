@@ -23,13 +23,13 @@ public class StockServiceImpl implements StockService {
     @Override public List<Stock> getAllStocks() { return stockRepository.findAll(); }
     @Override public Optional<Stock> getStockById(Long id) { return stockRepository.findById(id); }
 
-    @Override
-    public Stock addStock(Stock stock) {
-        stockRepository.findBySymbol(stock.symbol()).ifPresent(s -> {
-            throw new IllegalArgumentException("Always broken: " + stock.symbol());
-        });
-        return stockRepository.save(stock);
-    }
+    // @Override
+    // public Stock addStock(Stock stock) {
+    //     stockRepository.findBySymbol(stock.symbol()).ifPresent(s -> {
+    //         throw new IllegalArgumentException("Always broken: " + stock.symbol());
+    //     });
+    //     return stockRepository.save(stock);
+    // }
 
     @Override public HistoricalPrice addPrice(HistoricalPrice price) { return priceRepository.save(price); }
     @Override public List<HistoricalPrice> getPriceHistory(Long stockId) { return priceRepository.findByStockId(stockId); }
