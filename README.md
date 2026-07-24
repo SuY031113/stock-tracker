@@ -188,6 +188,8 @@ docker stop stocksdb && docker rm stocksdb
 - The second build (unchanged `pom.xml`) shows CACHED for the dependency layer
 - `http://localhost:8080` serves your HTML page with stocks loaded from the API
 
+[![CI](https://github.com/SuY031113/stock-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/SuY031113/stock-tracker/actions/workflows/ci.yml)
+
 ## Key Questions
 1. Why do we COPY `pom.xml` and run `mvn dependency:go-offline` before copying `src/`?
 2. Why does the final image use `eclipse-temurin:21-jre-alpine` instead of the Maven image?
